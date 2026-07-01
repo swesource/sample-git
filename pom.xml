@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.swesource.sample.git</groupId>
+    <artifactId>sample-git</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+    
+    <name>sample-git</name>
+
+    <description>
+        Sample project for exemplifying the functionality in Git.
+    </description>
+
+    <url>https://bitbucket.org/swesource/sample-git</url>
+
+    <organization>
+        <name>swesource</name>
+        <url>http://swesource.com/</url>
+    </organization>
+
+    <inceptionYear>2018</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>CC BY-SA 3.0</name>
+            <url>http://creativecommons.org/licenses/by-sa/3.0/legalcode</url>
+            <distribution>manual</distribution>
+            <comments>
+                Use freely but please give public and documented
+                credit to "Arnold Johansson @ swesource.com".
+            </comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>swesource</id>
+            <name>Arnold Johansson</name>
+            <email>arnie@swesource.com</email>
+            <url>http://swesource.com/</url>
+            <roles>
+                <role>IT Arhitect</role>
+            </roles>
+            <timezone>+1</timezone>
+            <organization>swesource</organization>
+            <organizationUrl>http://swesource.com/</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <!--<connection>scm:git:http://hg.swesource.com/${project.name}/</connection>-->
+        <developerConnection>scm:git:https://swesource@bitbucket.org/swesource/sample-git.git/</developerConnection>
+        <url>https://bitbucket.org/swesource/sample-git</url>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <projectName>${project.name}</projectName>
+        <version.javase>1.8</version.javase>
+        <version.maven-compiler-plugin>3.7.0</version.maven-compiler-plugin>
+        <version.sonar-maven-plugin>3.5.0.1254</version.sonar-maven-plugin>
+    </properties>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${version.javase}</source>
+                    <target>${version.javase}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${version.maven-compiler-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${version.sonar-maven-plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <distributionManagement>
+        <site>
+            <id>swesource.com.website</id>
+            <url>https://swesource.com/</url>
+        </site>
+    </distributionManagement>
+
+</project>
