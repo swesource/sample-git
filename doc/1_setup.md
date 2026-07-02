@@ -1,5 +1,15 @@
 # Setup
 
+**Table of contents**
+
+- [About](#about)
+- [SSH config](#ssh-config)
+  - [SigningKey config](#signingkey-config)
+- [Repository setup](#repository-setup)
+- [References](#references)
+
+## About
+
 The steps below will setup ssh keys, create [git](https://git-scm.com) repositories locally and in 
 [GitHub](https://github.com), connect them and make an initial commit-push.
 
@@ -7,7 +17,7 @@ The steps are how this repository itself was created.
 
 > **Note:** All examples here are currently for macOS, but will be similar/same on other operating systems.
 
-## ssh config
+## SSH config
 
 Create ssh keys on the local computer - they will end up in the directory ```~/.ssh/```.
 
@@ -54,7 +64,7 @@ git config gpg.format ssh
 git config user.signingkey <signing key>
 ```
 
-## Repository setup  
+## Repository setup
 
 Create a new empty repository in *GitHub*. 
 Here using the name "sample-git". Add nothing.
@@ -88,7 +98,7 @@ Continue setting up the repository, commit and push it to remote...
 ```
 echo "# sample-git" >> README.md
 git add README.md
-git commit -m -S "First commit"
+git commit -S -m "First commit"
 git branch -M main
 git remote add origin git@github.com:swesource/sample-git.git
 git push -u origin main
@@ -102,7 +112,7 @@ git branch -M main
 git push -u origin main
 ```
 
-# References
+## References
 
 * [GitHub Docs](https://docs.github.com/en)
 * [GitHub - Connecting GitHb with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
