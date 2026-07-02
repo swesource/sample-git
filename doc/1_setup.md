@@ -82,11 +82,13 @@ git config --global user.email <email>
 ```
 
 Continue setting up the repository, commit and push it to remote...
- 
+
+> **Note:** If the commit shall be **signed** using the *SigningKey* described above, 
+> the ```git commit``` command must also be accompanied by the ```-S```flag set.
 ```
 echo "# sample-git" >> README.md
 git add README.md
-git commit -m "First commit"
+git commit -m -S "First commit"
 git branch -M main
 git remote add origin git@github.com:swesource/sample-git.git
 git push -u origin main
